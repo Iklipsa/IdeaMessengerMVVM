@@ -12,12 +12,9 @@
                    Background="{DynamicResource MaterialDesignPaper}"
                    DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
                    d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type data:SampleMainWindowViewModel}}"
-                   Title="SignalChat" Height="450" Width="670" TitleCaps="False" TitleCharacterCasing="Normal" 
-                   ShowTitleBar="True" BorderBrush="{DynamicResource PrimaryHueDarkBrush}">
+                   Title="Idea Messenger" Height="450" Width="670" TitleCaps="False" TitleCharacterCasing="Normal" 
+                   ShowTitleBar="True" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" Topmost="True">
     <i:Interaction.Triggers>
-        <i:EventTrigger>
-            <i:InvokeCommandAction Command="{Binding ConnectCommand}"/>
-        </i:EventTrigger>
         <i:EventTrigger EventName="Closing">
             <i:InvokeCommandAction Command="{Binding LogoutCommand}"/>
         </i:EventTrigger>

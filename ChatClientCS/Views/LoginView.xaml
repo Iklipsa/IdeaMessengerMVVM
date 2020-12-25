@@ -21,29 +21,30 @@
                             <VisualBrush Visual="{Binding ElementName=ClipEllipse}"/>
                         </Grid.OpacityMask>
                         <Ellipse x:Name="ClipEllipse" Fill="White" Stroke="Black"/>
-                        <materialDesign:PackIcon Kind="AccountCircle" Width="144" Height="144" Margin="-12"/>
+                        <materialDesign:PackIcon Kind="AccountCircle" Width="144" Height="144" Margin="-12" Foreground="#DD4B4B4B"/>
                         <Image Source="{Binding ProfilePic, FallbackValue={StaticResource BlankImage},
-                            TargetNullValue={StaticResource BlankImage}}"/>
+                            TargetNullValue={StaticResource BlankImage}}" />
                         <Ellipse Stroke="Black" StrokeThickness="1" UseLayoutRounding="True" Opacity="0.2"/>
                     </Grid>
                 </materialDesign:ColorZone>
                 <Button Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
-                        HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,36,16"
+                        HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,41,21"
                         Command="{Binding SelectProfilePicCommand}"
-                        ToolTip="Click to select picture">
+                        ToolTip="Click to select picture" BorderBrush="#FF18E262" Background="#FF18E262" Height="34" Width="34">
                     <materialDesign:PackIcon Kind="FileImage" Width="20" Height="20" />
                 </Button>
                 <Border Grid.Row="1" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,1,0,0">
                     <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center"
                                 VerticalAlignment="Top" Margin="0,10,0,0">
                         <TextBox x:Name="UsernameTxtBox" Width="150" Margin="0,5"
-                                 materialDesign:HintAssist.Hint="Username"   
+                                 materialDesign:HintAssist.Hint="Логин"   
                                  Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}">
                             <TextBox.InputBindings>
                                 <KeyBinding Command="{Binding LoginCommand}" Key="Return"/>
                             </TextBox.InputBindings>
                         </TextBox>
-                        <Button Content="Login" Margin="0,10,0,0" Command="{Binding LoginCommand}"/>
+                        <Button Content="Войти" Margin="0,10,0,0" Command="{Binding LoginCommand}"
+                                Background="#FF0F7FD6" BorderBrush="#FF0F7FD6"/>
                     </StackPanel>
                 </Border>
             </Grid>
