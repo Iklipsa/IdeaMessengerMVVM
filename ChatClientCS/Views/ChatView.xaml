@@ -201,8 +201,8 @@
         </DataTemplate>
 
         <DataTemplate x:Key="MessagesDataTemplate">
-            <Border Name="MessageBorder" MinHeight="40" MinWidth="280" BorderThickness="1" Background="White" 
-                    Margin="10,0,60,10" BorderBrush="{DynamicResource AccentColorBrush}" CornerRadius="4" SnapsToDevicePixels="True"
+            <Border Name="MessageBorder" MinHeight="40" MinWidth="280" BorderThickness="1" Background="#EFEBE9" 
+                    Margin="10,0,60,10" BorderBrush="#BCAAA4" CornerRadius="4" SnapsToDevicePixels="True"
                     HorizontalAlignment="Left">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -214,7 +214,7 @@
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=ClipBorder}"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="ClipBorder" CornerRadius="3" Background="#FFB49F9F"/>
+                        <Border x:Name="ClipBorder" CornerRadius="3" Background="White"/>
                         <Image Stretch="UniformToFill" Cursor="Hand" 
                                ToolTip="Click to open image in your default image viewer"
                                Source="{Binding Picture}">
@@ -281,7 +281,7 @@
                      ItemContainerStyle="{DynamicResource ParticipantsListBoxItemStyle}"
                      SelectedItem="{Binding SelectedParticipant}"                     
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="#DD0E063C" BorderBrush="#00000000" Background="White"/>
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         </Border>
 
         <!--Messages-->
@@ -290,7 +290,7 @@
                       ItemTemplate="{DynamicResource MessagesDataTemplate}"
                       ScrollViewer.VerticalScrollBarVisibility="Auto">
             <i:Interaction.Behaviors>
-                <!--<utils:BringNewItemIntoViewBehavior/>-->
+                <utils:BringNewItemIntoViewBehavior/>
             </i:Interaction.Behaviors>
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
@@ -328,7 +328,7 @@
                             </i:Interaction.Triggers>
                         </TextBox>
                         <!--Image-->
-                        <Button Grid.Column="1" Foreground="#FF878787"
+                        <Button Grid.Column="1" Foreground="#FF6E6E6E" Margin="4"
                                 Style="{DynamicResource ImageButtonStyle}"
                                 Command="{Binding SendImageMessageCommand}"/>
                     </Grid>
@@ -336,7 +336,7 @@
                 <!--Send-->
                 <Button x:Name="SendButton" Grid.Column="1" Margin="10"
                         Style="{DynamicResource SendButtonStyle}"
-                        Command="{Binding SendTextMessageCommand}" Foreground="#FF2970B6"/>
+                        Command="{Binding SendTextMessageCommand}"/>
             </Grid>
         </Border>
     </Grid>
