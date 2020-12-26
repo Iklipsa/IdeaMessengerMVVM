@@ -300,7 +300,7 @@ namespace ChatClientCS.ViewModels
             {
                 ChatMessage msg = new ChatMessage { Author = UserName, Picture = pic, Time = DateTime.Now, IsOriginNative = true };
                 SelectedParticipant.Chatter.Add(msg);
-            }           
+            }
         }
 
         private bool CanSendImageMessage()
