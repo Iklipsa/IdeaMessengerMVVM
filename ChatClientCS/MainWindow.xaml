@@ -12,7 +12,7 @@
                    Background="{DynamicResource MaterialDesignPaper}"
                    DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
                    d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type data:SampleMainWindowViewModel}}"
-                   Title="Idea Messenger" Height="450" Width="670" TitleCaps="False" TitleCharacterCasing="Normal" 
+                   Title="Idea Messenger" Height="450" Width="850" TitleCaps="False" TitleCharacterCasing="Normal" 
                    ShowTitleBar="True" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" Topmost="True">
     <i:Interaction.Triggers>
         <i:EventTrigger>
@@ -24,6 +24,10 @@
     </i:Interaction.Triggers>
 
     <Grid>
-        <ContentControl Content="{Binding}" Style="{StaticResource ChatContentStyle}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="260*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding}" Style="{StaticResource ChatContentStyle}" Grid.ColumnSpan="2"/>
     </Grid>
 </metro:MetroWindow>

@@ -122,7 +122,62 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--// Toggle Button Style Template //-->
 
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="pack://siteoforigin:,,,/Resources/tgBtn_MouseOver.png"/>
+
+        <!--// Text font style //-->
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+
+                        <Border  x:Name="border"
+                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                 Background="{TemplateBinding Background}"
+                                 SnapsToDevicePixels="True">
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}" />
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="true">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}" />
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
         <DataTemplate x:Key="ParticipantsDataTemplate">
             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource MaterialDesignDivider}"
                     Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType=ListBoxItem}}"
@@ -281,7 +336,7 @@
                      ItemContainerStyle="{DynamicResource ParticipantsListBoxItemStyle}"
                      SelectedItem="{Binding SelectedParticipant}"                     
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="60,0,0,0"/>
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="62,0,-1,0"/>
         </Border>
 
         <!--Messages-->
@@ -343,7 +398,7 @@
         <!--// Navigation Panel //-->
         <Grid   x:Name="nav_pnl"
                     HorizontalAlignment="Left"
-                    Width="165"
+                    Width="62"
                     Background="#2E333A" Grid.RowSpan="2">
             <StackPanel x:Name="st_pnl">
                 <!--// Grid for the Menu Toggle Button //-->
@@ -351,18 +406,18 @@
                     <!--// Menu title text //-->
                     <TextBlock
                                     Grid.Column="0"
-                                    Margin="74,20,0,40"
-                                    Text="M E N U"
+                                    Margin="68,18,0,42"
+                                    Text="Menu"
                                     Foreground="White"
-                                    FontSize="22"
+                                    FontSize="17"
                                     Background="Transparent"
-                                    HorizontalAlignment="Left">                                                                
-                            <!--// Shadow Effect //-->
+                                    HorizontalAlignment="Left" RenderTransformOrigin="0.484,0.367">                                                                
+                        <!--// Shadow Effect //-->
                         <TextBlock.Effect>
-                            <DropShadowEffect  BlurRadius="10"
+                            <DropShadowEffect  BlurRadius="7"
                                                    ShadowDepth="1"
                                                    Direction="-90"
-                                                   Color="White"/>
+                                                   Color="Honeydew"/>
                         </TextBlock.Effect>
                     </TextBlock>
                     <!--// Toggle Button //-->
@@ -373,9 +428,16 @@
                                       Margin="18,-20,0,0"
                                       Height="30"
                                       Width="30"
-                                      BorderThickness="0">
-                                   
-                        <!--// Toggle button default background image //-->                      
+                                      BorderThickness="0"
+                                      Style="{StaticResource tb_style}">
+
+                        <!--// Toggle button default background image //-->
+                        <ToggleButton.Background>
+
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/tgBtn_default.png"
+                                            Stretch="None"/>
+
+                        </ToggleButton.Background>
                         <!--// Toggle Button - Checked, Unchecked events //-->
                         <ToggleButton.Triggers>
                             <EventTrigger RoutedEvent="ToggleButton.Unchecked">
@@ -385,7 +447,7 @@
                                                 Storyboard.TargetName="nav_pnl"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="230" To="65"
+                                                From="140" To="65"
                                                 Duration="0:0:0.2">
                                         </DoubleAnimation>
                                     </Storyboard>
@@ -398,7 +460,7 @@
                                                 Storyboard.TargetName="nav_pnl"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="65" To="230"
+                                                From="65" To="140"
                                                 Duration="0:0:0.3">
                                         </DoubleAnimation>
                                     </Storyboard>
@@ -411,18 +473,18 @@
                 <ListView  x:Name="LV"
                                Background="Transparent"
                                BorderBrush="Transparent"
-                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                               ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="260">
                     <!--// Home //-->
                     <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
                             <Image Source="pack://siteoforigin:,,,/Resources/img_home.png"
                                        Stretch="None"
-                                       Margin="12,0,0,0"/>
+                                       Margin="7,0,0,0"/>
                             <TextBlock Text="Home"
-                                       Margin="25,0,0,0">
-                            </TextBlock>
+                                       Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="16"/>
+
                         </StackPanel>
                         <!--// Tooltip //-->
                         <ListViewItem.ToolTip>
@@ -433,14 +495,14 @@
                     </ListViewItem>
                     <!--// Contacts //-->
                     <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
-                                        Width="230">
+                                        Width="140">
                             <Image Source="pack://siteoforigin:,,,/Resources/img_contact.png"
                                        Stretch="None"
-                                       Margin="12,0,0,0"/>
+                                       Margin="7,0,0,0" OpacityMask="Black"/>
                             <TextBlock Text="Contacts"
-                                       Margin="25,0,0,0">
+                                       Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="16">
                             </TextBlock>
 
                         </StackPanel>
@@ -453,14 +515,14 @@
                     </ListViewItem>
                     <!--// Messages //-->
                     <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
-                                        Width="230">
+                                        Width="140">
                             <Image Source="pack://siteoforigin:,,,/Resources/img_message.png"
                                        Stretch="None"
-                                       Margin="12,0,0,0"/>
+                                       Margin="7,0,0,0"/>
                             <TextBlock Text="Messages"
-                                           Margin="25,0,0,0">
+                                           Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="18">
                             </TextBlock>
 
                         </StackPanel>
@@ -472,14 +534,14 @@
                         </ListViewItem.ToolTip>
                     </ListViewItem>
                     <!--// Maps //-->
-                    <ListViewItem HorizontalAlignment="Left" Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
+                    <ListViewItem HorizontalAlignment="Left" Margin="0,0,0,1" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
-                                        Width="230">
-                            <Image Source="pack://siteoforigin:,,,/Resources/img_map.png"
+                                        Width="140">
+                            <Image Source="pack://siteoforigin:,,,/Resources/img_setting.png"
                                        Stretch="None"
-                                       Margin="12,0,0,0"/>
+                                       Margin="7,0,0,0"/>
                             <TextBlock Text="Maps"
-                                           Margin="25,0,0,0">
+                                           Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="16">
                             </TextBlock>
 
                         </StackPanel>
@@ -490,8 +552,8 @@
                             </ToolTip>
                         </ListViewItem.ToolTip>
                     </ListViewItem>
-                    <!--// Settings //-->     
-                   </ListView>
+                    <!--// Settings //-->
+                </ListView>
             </StackPanel>
         </Grid>
     </Grid>

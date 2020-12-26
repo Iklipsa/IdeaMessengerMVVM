@@ -44,13 +44,6 @@ namespace ChatClientCS.Views
                 tt_maps.Visibility = Visibility.Visible;
                 
             }
-        }
-
-  
-
-        private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Tg_Btn.IsChecked = false;
-        }      
+        } 
     }
 }
