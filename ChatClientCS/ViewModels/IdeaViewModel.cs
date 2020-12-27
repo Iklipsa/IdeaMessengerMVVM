@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatClientCS.ViewModels
 {
-    class IdeaViewModel
+    public class IdeaViewModel : ViewModelBase
     {
     }
 }
