@@ -45,8 +45,8 @@
             <DataTemplate x:Key="ChatTemplate">
                 <views:ChatView/>
             </DataTemplate>
-            <DataTemplate x:Key="HomeTemplate">
-                <views:/>
+            <DataTemplate x:Key="DataTemplate">
+                <views:DataView/>
             </DataTemplate>
 
             <Style x:Key="ChatContentStyle" TargetType="ContentControl">
@@ -58,17 +58,8 @@
                 </Style.Triggers>
             </Style>
 
-            <Style x:Key="HomeContentStyle" TargetType="ContentControl">
-                <Setter Property="ContentTemplate" Value="{StaticResource LoginTemplate}"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding UserMode}" Value="{x:Static enums:UserModes.Home}">
-                        <Setter Property="ContentTemplate" Value="{StaticResource ChatTemplate}"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-
             <utils:ViewModelLocator x:Key="VMLocator"/>
-            <BitmapImage x:Key="BlankImage" UriSource="/SignalChat;component/Imgs/blank.png"/>
+            <BitmapImage x:Key="BlankImage" UriSource="/SignalChat;component/Resources/blank.png"/>
             <utils:ByteBitmapSourceConverter x:Key="ByteBmpSrcConverter"/>
         </ResourceDictionary>
 

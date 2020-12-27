@@ -242,7 +242,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imgs\blank.png" />
+    <Resource Include="Resources\blank.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\closeBtn_default.png" />
@@ -273,6 +273,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tgBtn_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\addUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\iMenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

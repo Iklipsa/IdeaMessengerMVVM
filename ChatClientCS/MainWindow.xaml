@@ -64,20 +64,19 @@
                                       Grid.Column="0"
                                       VerticalAlignment="Center"
                                       HorizontalAlignment="Left"
-                                      Margin="18,-20,0,0"
-                                      Height="30"
-                                      Width="30"
+                                      Margin="15,15,0,42"
+                                      Height="33"
+                                      Width="33"
                                       BorderThickness="0"
-                                      >
+                                      Style="{StaticResource MaterialDesignActionToggleButton}"
+                                      ToolTip="MaterialDesignActionToggleButton" Background="{x:Null}">
+                        <Image  Source="Resources/iMenu.png" Width="21" Height="21">
+                            <Image.Effect>
+                                <DropShadowEffect Color="#FFAEBCFF" Direction="0" ShadowDepth="0"/>
+                            </Image.Effect>
+                        </Image>
 
-                        <!--// Toggle button default background image //-->
-                        <ToggleButton.Background>
-
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/tgBtn_default.png"
-                                            Stretch="None"/>
-
-                        </ToggleButton.Background>
-                        <!--// Toggle Button - Checked, Unchecked events //-->
+                        
                         <ToggleButton.Triggers>
                             <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                 <BeginStoryboard>
@@ -118,7 +117,7 @@
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
-                            <Button BorderBrush="{x:Null}" Margin="5,0,0,0" Width="36" Height="36" Opacity="1">
+                            <Button BorderBrush="{x:Null}" Margin="5,0,0,0" Width="36" Height="36" Opacity="1" Click="HouseView_Clicked">
                                 <Button.Background>
                                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/img_home.png" Stretch="None"/>
                                 </Button.Background>
@@ -159,10 +158,10 @@
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
-                            <Image Source="pack://siteoforigin:,,,/Resources/img_message.png"
+                            <Image Source="pack://siteoforigin:,,,/Resources/img_signout.png"
                                        Stretch="None"
                                        Margin="7,0,0,0"/>
-                            <TextBlock Text="Messages"
+                            <TextBlock Text="Go Idea"
                                            Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="18">
                             </TextBlock>
 
