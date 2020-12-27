@@ -140,9 +140,6 @@
     <Compile Include="Views\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -168,10 +165,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ChatView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
