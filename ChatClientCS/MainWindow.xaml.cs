@@ -36,7 +36,7 @@ namespace ChatClientCS
 
         private void HouseView_Clicked(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void AboutView_Clicked(object sender, RoutedEventArgs e)
