@@ -16,9 +16,9 @@ using System.Reactive.Linq;
 
 namespace ChatClientCS.ViewModels
 {
-    public class AboutViewModel
+    public class HouseViewModel
     {
-        public AboutViewModel()
+        public HouseViewModel()
         {
 
         }

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MEx.View
+namespace ChatClientCS.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Home.xaml
+    /// Логика взаимодействия для HomePage.xaml
     /// </summary>
-    public partial class Home : UserControl
+    public partial class HomePage : Page
     {
-        public Home()
+        public HomePage()
         {
             InitializeComponent();
         }

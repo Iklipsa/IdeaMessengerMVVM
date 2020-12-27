@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using System.Windows;
+using ChatClientCS.ViewModels;
 
 namespace ChatClientCS
 {
@@ -31,6 +32,16 @@ namespace ChatClientCS
                 tt_maps.Visibility = Visibility.Visible;
 
             }
+        }
+
+        private void HouseView_Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AboutView_Clicked(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

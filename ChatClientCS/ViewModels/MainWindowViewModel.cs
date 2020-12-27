@@ -18,6 +18,25 @@ namespace ChatClientCS.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel(IChatService chatSvc, IDialogService diagSvc)
+        {
+            dialogService = diagSvc;
+            chatService = chatSvc;
+
+            chatSvc.NewTextMessage += NewTextMessage;
+            chatSvc.NewImageMessage += NewImageMessage;
+            chatSvc.ParticipantLoggedIn += ParticipantLogin;
+            chatSvc.ParticipantLoggedOut += ParticipantDisconnection;
+            chatSvc.ParticipantDisconnected += ParticipantDisconnection;
+            chatSvc.ParticipantReconnected += ParticipantReconnection;
+            chatSvc.ParticipantTyping += ParticipantTyping;
+            chatSvc.ConnectionReconnecting += Reconnecting;
+            chatSvc.ConnectionReconnected += Reconnected;
+            chatSvc.ConnectionClosed += Disconnected;
+
+            ctxTaskFactory = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
         private IChatService chatService;
         private IDialogService dialogService;
         private TaskFactory ctxTaskFactory;
@@ -467,25 +486,5 @@ namespace ChatClientCS.ViewModels
             if (!string.IsNullOrEmpty(_profilePic)) pic = File.ReadAllBytes(_profilePic);
             return pic;
         }
-
-        public MainWindowViewModel(IChatService chatSvc, IDialogService diagSvc)
-        {
-            dialogService = diagSvc;
-            chatService = chatSvc;
-
-            chatSvc.NewTextMessage += NewTextMessage;
-            chatSvc.NewImageMessage += NewImageMessage;
-            chatSvc.ParticipantLoggedIn += ParticipantLogin;
-            chatSvc.ParticipantLoggedOut += ParticipantDisconnection;
-            chatSvc.ParticipantDisconnected += ParticipantDisconnection;
-            chatSvc.ParticipantReconnected += ParticipantReconnection;
-            chatSvc.ParticipantTyping += ParticipantTyping;
-            chatSvc.ConnectionReconnecting += Reconnecting;
-            chatSvc.ConnectionReconnected += Reconnected;
-            chatSvc.ConnectionClosed += Disconnected;
-
-            ctxTaskFactory = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
-        }
-
     }
 }

@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="MEx.View.Home"
+﻿<UserControl x:Class="ChatClientCS.Views.HouseView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MEx.View"
+             xmlns:local="clr-namespace:ChatClientCS.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Width="785" Background="White">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFD1D1D1">
             
     </Grid>
 </UserControl>
