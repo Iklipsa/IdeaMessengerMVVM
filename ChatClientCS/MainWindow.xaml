@@ -24,11 +24,13 @@
     </i:Interaction.Triggers>
     
     <Grid>
-        <Grid.ColumnDefinitions>
+        <Grid Margin="62,0,0,0">
+            <Grid.ColumnDefinitions>
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="260*"/>
-        </Grid.ColumnDefinitions>
-        <ContentControl Content="{Binding}" Style="{StaticResource ChatContentStyle}" Grid.ColumnSpan="2"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Content="{Binding}" Style="{StaticResource ChatContentStyle}" Grid.ColumnSpan="2"/>
+        </Grid>
         <!--// Navigation Panel //-->
         <Grid   x:Name="nav_pnl"
                     HorizontalAlignment="Left"
@@ -113,7 +115,8 @@
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
-                            <Button Command="NavigationCommands.GoToPage" CommandParameter="/LoginView.xaml" BorderBrush="{x:Null}" Margin="5,0,0,0" Width="36" Height="36" Opacity="1">
+                            <Button  
+                                BorderBrush="{x:Null}" Margin="5,0,0,0" Width="36" Height="36" Opacity="1">
                                 <Button.Background>
                                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/img_home.png" Stretch="None"/>
                                 </Button.Background>
@@ -191,6 +194,6 @@
                     <!--// Settings //-->
                 </ListView>
             </StackPanel>
-        </Grid>        
+        </Grid>
     </Grid>
 </metro:MetroWindow>

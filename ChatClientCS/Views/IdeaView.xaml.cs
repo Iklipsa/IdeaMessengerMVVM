@@ -18,7 +18,7 @@ namespace ChatClientCS.Views
     /// <summary>
     /// Логика взаимодействия для IdeaView.xaml
     /// </summary>
-    public partial class IdeaView : Page
+    public partial class IdeaView : UserControl
     {
         public IdeaView()
         {
