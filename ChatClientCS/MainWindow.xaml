@@ -113,9 +113,11 @@
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
-                            <Image Source="pack://siteoforigin:,,,/Resources/img_home.png"
-                                       Stretch="None"
-                                       Margin="7,0,0,0"/>
+                            <Button Command="NavigationCommands.GoToPage" CommandParameter="/LoginView.xaml" BorderBrush="{x:Null}" Margin="5,0,0,0" Width="36" Height="36" Opacity="1">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/img_home.png" Stretch="None"/>
+                                </Button.Background>
+                            </Button>
                             <TextBlock Text="Home"
                                        Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="16"/>
 
