@@ -395,15 +395,15 @@
             </Grid>
         </Border>
 
-        <!--// Navigation Panel //-->
+        <!--// Navigation Panel //--><!--
         <Grid   x:Name="nav_pnl"
                     HorizontalAlignment="Left"
                     Width="62"
                     Background="#2E333A" Grid.RowSpan="2">
             <StackPanel x:Name="st_pnl">
-                <!--// Grid for the Menu Toggle Button //-->
+                --><!--// Grid for the Menu Toggle Button //--><!--
                 <Grid Height="90">
-                    <!--// Menu title text //-->
+                    --><!--// Menu title text //--><!--
                     <TextBlock
                                     Grid.Column="0"
                                     Margin="68,18,0,42"
@@ -412,7 +412,7 @@
                                     FontSize="17"
                                     Background="Transparent"
                                     HorizontalAlignment="Left" RenderTransformOrigin="0.484,0.367">                                                                
-                        <!--// Shadow Effect //-->
+                        --><!--// Shadow Effect //--><!--
                         <TextBlock.Effect>
                             <DropShadowEffect  BlurRadius="7"
                                                    ShadowDepth="1"
@@ -420,7 +420,7 @@
                                                    Color="Honeydew"/>
                         </TextBlock.Effect>
                     </TextBlock>
-                    <!--// Toggle Button //-->
+                    --><!--// Toggle Button //--><!--
                     <ToggleButton x:Name="Tg_Btn"
                                       Grid.Column="0"
                                       VerticalAlignment="Center"
@@ -431,14 +431,14 @@
                                       BorderThickness="0"
                                       Style="{StaticResource tb_style}">
 
-                        <!--// Toggle button default background image //-->
+                        --><!--// Toggle button default background image //--><!--
                         <ToggleButton.Background>
 
                             <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/tgBtn_default.png"
                                             Stretch="None"/>
 
                         </ToggleButton.Background>
-                        <!--// Toggle Button - Checked, Unchecked events //-->
+                        --><!--// Toggle Button - Checked, Unchecked events //--><!--
                         <ToggleButton.Triggers>
                             <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                 <BeginStoryboard>
@@ -469,12 +469,12 @@
                         </ToggleButton.Triggers>
                     </ToggleButton>
                 </Grid>
-                <!--// ListView with menu list items //-->
+                --><!--// ListView with menu list items //--><!--
                 <ListView  x:Name="LV"
                                Background="Transparent"
                                BorderBrush="Transparent"
                                ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="260">
-                    <!--// Home //-->
+                    --><!--// Home //--><!--
                     <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
@@ -486,14 +486,14 @@
                                        Margin="20,0,0,0" Foreground="#DDFFFFFF" Height="16"/>
 
                         </StackPanel>
-                        <!--// Tooltip //-->
+                        --><!--// Tooltip //--><!--
                         <ListViewItem.ToolTip>
                             <ToolTip x:Name="tt_home"
                                         Content="Home">
                             </ToolTip>
                         </ListViewItem.ToolTip>
                     </ListViewItem>
-                    <!--// Contacts //-->
+                    --><!--// Contacts //--><!--
                     <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
@@ -506,14 +506,14 @@
                             </TextBlock>
 
                         </StackPanel>
-                        <!--// Tooltip //-->
+                        --><!--// Tooltip //--><!--
                         <ListViewItem.ToolTip>
                             <ToolTip x:Name="tt_contacts"
                                          Content="Contacts"/>
 
                         </ListViewItem.ToolTip>
                     </ListViewItem>
-                    <!--// Messages //-->
+                    --><!--// Messages //--><!--
                     <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
@@ -526,14 +526,14 @@
                             </TextBlock>
 
                         </StackPanel>
-                        <!--// Tooltip //-->
+                        --><!--// Tooltip //--><!--
                         <ListViewItem.ToolTip>
                             <ToolTip x:Name="tt_messages"
                                          Content="Messages">
                             </ToolTip>
                         </ListViewItem.ToolTip>
                     </ListViewItem>
-                    <!--// Maps //-->
+                    --><!--// Maps //--><!--
                     <ListViewItem HorizontalAlignment="Left" Margin="0,0,0,1" MouseEnter="ListViewItem_MouseEnter">
                         <StackPanel Orientation="Horizontal"
                                         Width="140">
@@ -545,16 +545,16 @@
                             </TextBlock>
 
                         </StackPanel>
-                        <!--// Tooltip //-->
+                        --><!--// Tooltip //--><!--
                         <ListViewItem.ToolTip>
                             <ToolTip x:Name="tt_maps"
                                          Content="Maps">
                             </ToolTip>
                         </ListViewItem.ToolTip>
                     </ListViewItem>
-                    <!--// Settings //-->
+                    --><!--// Settings //--><!--
                 </ListView>
             </StackPanel>
-        </Grid>
+        </Grid>-->
     </Grid>
 </UserControl>
