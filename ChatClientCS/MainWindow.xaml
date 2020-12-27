@@ -4,6 +4,8 @@
                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                    xmlns:local="clr-namespace:ChatClientCS"
+                   xmlns:viewmodels="clr-namespace:ChatClientCS.ViewModels"
+                   xmlns:view="clr-namespace:ChatClientCS.View"
                    xmlns:data="clr-namespace:ChatClientCS.Data"
                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                    mc:Ignorable="d"
@@ -23,6 +25,11 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     
+    <Window.Resources>
+        <DataTemplate x:Name="homeViewTemplate" DataType="{x:Type viewmodels:HomeViewModel}">
+            
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid Margin="62,0,0,0">
             <Grid.ColumnDefinitions>
