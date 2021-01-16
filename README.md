@@ -1,4 +1,4 @@
-##Client
+
 
 MVVM Database connection for view documents and idea
 +
